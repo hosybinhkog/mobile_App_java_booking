@@ -14,7 +14,7 @@ import com.example.projecthomestay.R;
 
 import java.util.List;
 
-import Category.ListCategoryAdapter;
+
 import Popular.PopularAdaptor;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
@@ -24,6 +24,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     public ProductAdapter(Context context) {
         this.context = context;
     }
+
     public void setData(List<Product> listProduct){
         this.listProduct = listProduct;
         notifyDataSetChanged();
@@ -32,13 +33,13 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     @Override
     public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_pupular_list,parent,false);
-        return new ProductAdapter.ProductViewHolder(view);
+        return new ProductViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
         Product product = listProduct.get(position);
-        if(product == null) return;
+        if(product==null) return;
         holder.title_product.setText(product.getTitle_popularList());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context,RecyclerView.HORIZONTAL,false);
         holder.rcvProductList.setLayoutManager(linearLayoutManager);
@@ -60,7 +61,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
             title_product = itemView.findViewById(R.id.title_popularList);
-            rcvProductList = itemView.findViewById(R.id.rcv_List_category);
+            rcvProductList = itemView.findViewById(R.id.rcv_popularList);
         }
     }
 }

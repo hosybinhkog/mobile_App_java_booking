@@ -8,9 +8,9 @@ public class Product {
     private List<Popular> list_popular;
     private String title_popularList;
 
-    public Product(List<Popular> list_popular, String title_popularList) {
-        this.list_popular = list_popular;
-        this.title_popularList = title_popularList;
+    public Product(List<Popular> listPopular, String popular) {
+        this.list_popular = listPopular;
+        this.title_popularList = popular;
     }
 
     public List<Popular> getList_popular() {

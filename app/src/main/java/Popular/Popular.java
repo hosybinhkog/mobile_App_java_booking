@@ -8,7 +8,7 @@ public class Popular {
     public Popular(String title, String desc, int resourceId) {
         this.title = title;
         this.desc = desc;
-        ResourceId = resourceId;
+        this.ResourceId = resourceId;
     }
 
     public String getTitle() {

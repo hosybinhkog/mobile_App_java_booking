@@ -28,9 +28,8 @@ import homestay.homestay;
 public class AppActivity extends AppCompatActivity  {
 
 //    private BottomNavigationView navigationView;
-    private RecyclerView recyclerViewCategoryList;
+    private RecyclerView recyclerViewCategoryList,recyclerViewProductList;
     private ListCategoryAdapter categoryAdapter;
-    private  RecyclerView recyclerViewProductList;
     private ProductAdapter productAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,6 +104,9 @@ public class AppActivity extends AppCompatActivity  {
         listPopular.add(new Popular("Popular 1","Hanoi hom nay nho em",R.drawable.category4));
 
         list.add(new Product(listPopular,"Popular"));
+        list.add(new Product(listPopular,"Popular"));
+        list.add(new Product(listPopular,"Popular"));
+        list.add(new Product(listPopular,"Popular"));
 
         return list;
     }
@@ -121,6 +123,7 @@ public class AppActivity extends AppCompatActivity  {
         listCategory.add(new homestay("Homestay 5",R.drawable.category2));
 
         list.add(new categoryA("Category", listCategory));
+
 
         return list;
     }
