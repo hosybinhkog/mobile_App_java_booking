@@ -42,6 +42,6 @@ public class ShowDetailHomeStay extends AppCompatActivity {
 
     public void bandle(){
         object = (Popular)getIntent().getSerializableExtra("object");
-        
+
     }
 }
