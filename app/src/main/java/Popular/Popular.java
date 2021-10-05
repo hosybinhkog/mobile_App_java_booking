@@ -1,6 +1,8 @@
 package Popular;
 
-public class Popular {
+import java.io.Serializable;
+
+public class Popular implements Serializable {
     private String title;
     private String desc;
     private int ResourceId;

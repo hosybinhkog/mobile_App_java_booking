@@ -1,14 +1,29 @@
 package com.example.projecthomestay.Activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.projecthomestay.R;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import Category.ListCategoryAdapter;
+import Category.categoryA;
+import Popular.Popular;
+import Product.Product;
+import Product.ProductAdapter;
+import homestay.homestay;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,9 +40,12 @@ public class HomePage extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Button btnShowDetail;
+    Context thiscontext;
 
-    //
-
+    private RecyclerView recyclerViewCategoryList,recyclerViewProductList;
+    private ListCategoryAdapter categoryAdapter;
+    private ProductAdapter productAdapter;
 
     public HomePage() {
         // Required empty public constructor
@@ -68,7 +86,59 @@ public class HomePage extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home_page, container, false);
+        Context thiscontext = container.getContext();
+        View view =  inflater.inflate(R.layout.fragment_home_page, container, false);
+
+        recyclerViewCategoryList = view.findViewById(R.id.categories);
+        categoryAdapter = new ListCategoryAdapter(thiscontext);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(thiscontext, RecyclerView.VERTICAL , false);
+        recyclerViewCategoryList.setLayoutManager(linearLayoutManager);
+        categoryAdapter.setData(GetCategory());
+        recyclerViewCategoryList.setAdapter(categoryAdapter);
+
+        recyclerViewProductList = view.findViewById(R.id.product_rec);
+        productAdapter = new ProductAdapter(thiscontext);
+        LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(thiscontext, RecyclerView.VERTICAL , false);
+        recyclerViewProductList.setLayoutManager(linearLayoutManager1);
+        productAdapter.setData(getProduct());
+        recyclerViewProductList.setAdapter(productAdapter);
+
+        View view1 =  inflater.inflate(R.layout.view_card_mathparent, container, false);
+
+
+        return view;
+    }
+    private List<categoryA> GetCategory() {
+        List<categoryA> list = new ArrayList<>();
+
+        List<homestay> listCategory = new ArrayList<>();
+
+        listCategory.add(new homestay("Homestay 1",R.drawable.category4));
+        listCategory.add(new homestay("Homestay 2",R.drawable.category4));
+        listCategory.add(new homestay("Homestay 3",R.drawable.category2));
+        listCategory.add(new homestay("Homestay 4",R.drawable.category2));
+        listCategory.add(new homestay("Homestay 5",R.drawable.category2));
+
+        list.add(new categoryA("Category", listCategory));
+
+
+        return list;
+    }
+    private List<Product> getProduct() {
+        List<Product> list = new ArrayList<>();
+        List<Popular> listPopular = new ArrayList<>();
+
+        listPopular.add(new Popular("Popular 1","Hanoi hom nay nho em",R.drawable.category4));
+        listPopular.add(new Popular("Popular 1","Hanoi hom nay nho em",R.drawable.category4));
+        listPopular.add(new Popular("Popular 1","Hanoi hom nay nho em",R.drawable.category4));
+        listPopular.add(new Popular("Popular 1","Hanoi hom nay nho em",R.drawable.category4));
+        listPopular.add(new Popular("Popular 1","Hanoi hom nay nho em",R.drawable.category4));
+        listPopular.add(new Popular("Popular 1","Hanoi hom nay nho em",R.drawable.category4));
+        listPopular.add(new Popular("Popular 1","Hanoi hom nay nho em",R.drawable.category4));
+
+        list.add(new Product(listPopular,"Popular"));
+
+        return list;
     }
 
 }

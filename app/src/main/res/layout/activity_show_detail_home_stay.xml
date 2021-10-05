@@ -26,6 +26,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="320dp"
                     android:scaleType="centerCrop"
+                    android:id="@+id/img_product_detailt"
                     android:src="@drawable/category2" />
             </androidx.cardview.widget.CardView>
 
@@ -41,6 +42,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Mascara House"
+                    android:id="@+id/title_detail"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
@@ -60,6 +62,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="40dp"
+                        android:id="@+id/location_detail"
                         android:text="Hanoi, hồ gươm"
                         android:textSize="16sp" />
 
@@ -94,6 +97,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="18dp"
+                    android:id="@+id/desc_detail"
                     android:text="@string/lorem"
                     android:textSize="12sp" />
 
@@ -104,6 +108,7 @@
                     android:text="Facitices"
                     android:textColor="@color/black"
                     android:textSize="16sp"
+                    android:id="@+id/categoriesID_detail"
                     android:textStyle="bold" />
 
                 <LinearLayout
@@ -164,6 +169,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="$750"
+                    android:id="@+id/price_detail"
                     android:textColor="@color/black"
                     android:textSize="24sp"
                     android:textStyle="bold" />
@@ -172,7 +178,7 @@
 
     </ScrollView>
     <Button
-        android:id="@+id/containedButton"
+        android:id="@+id/addCartDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -185,7 +191,7 @@
         />
     <Button
         android:layout_margin="30dp"
-        android:id="@+id/textButton"
+        android:id="@+id/ButtonBackHome"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:background="@drawable/round_pink_btn"

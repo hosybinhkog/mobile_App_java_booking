@@ -141,9 +141,10 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/round"
                 app:iconGravity="end"
+                android:id="@+id/showDetail"
                 android:text=">"
                 android:textColor="@color/mainbg"
-                app:icon="@drawable/ic_cars"
+
                 />
         </LinearLayout>
     </LinearLayout>

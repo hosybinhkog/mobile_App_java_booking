@@ -1,6 +1,8 @@
 package homestay;
 
-public class homestay {
+import java.io.Serializable;
+
+public class homestay implements Serializable {
     private String title;
     private int resourceId;
 

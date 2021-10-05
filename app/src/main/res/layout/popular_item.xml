@@ -10,7 +10,7 @@
         android:background="@color/secondaryColor"
         android:padding="10dp"
         android:layout_width="match_parent"
-        android:layout_height="140dp" >
+        android:layout_height="170dp" >
         <androidx.cardview.widget.CardView
             android:layout_width="160dp"
             android:layout_height="match_parent"
@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_gravity="center">
+            >
             <TextView
                 android:id="@+id/title_popular"
                 android:layout_width="wrap_content"
@@ -72,7 +72,18 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_baseline_star_24"/>
+
             </LinearLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/round"
+                android:gravity="center"
+                android:id="@+id/showDetail1"
+                android:text="Order"
+                android:layout_marginTop="10dp"
+                android:textSize="12dp"
+                />
 
         </LinearLayout>
     </LinearLayout>

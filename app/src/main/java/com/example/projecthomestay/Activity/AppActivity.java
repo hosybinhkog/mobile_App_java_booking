@@ -1,8 +1,11 @@
 package com.example.projecthomestay.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,65 +30,62 @@ import homestay.homestay;
 
 public class AppActivity extends AppCompatActivity  {
 
-//    private BottomNavigationView navigationView;
+    private BottomNavigationView navigationView;
     private RecyclerView recyclerViewCategoryList,recyclerViewProductList;
     private ListCategoryAdapter categoryAdapter;
     private ProductAdapter productAdapter;
+    private Button btnShowDetail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app);
+//
+//        recyclerViewCategoryList = findViewById(R.id.categories);
+//        categoryAdapter = new ListCategoryAdapter(this);
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL , false);
+//        recyclerViewCategoryList.setLayoutManager(linearLayoutManager);
+//        categoryAdapter.setData(GetCategory());
+//        recyclerViewCategoryList.setAdapter(categoryAdapter);
+//
+//        recyclerViewProductList = findViewById(R.id.product_rec);
+//        productAdapter = new ProductAdapter(this);
+//        LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(this, RecyclerView.VERTICAL , false);
+//        recyclerViewProductList.setLayoutManager(linearLayoutManager1);
+//        productAdapter.setData(getProduct());
+//        recyclerViewProductList.setAdapter(productAdapter);
 
-        recyclerViewCategoryList = findViewById(R.id.categories);
-        categoryAdapter = new ListCategoryAdapter(this);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL , false);
-        recyclerViewCategoryList.setLayoutManager(linearLayoutManager);
-        categoryAdapter.setData(GetCategory());
-        recyclerViewCategoryList.setAdapter(categoryAdapter);
+        navigationView = findViewById(R.id.navigationBottom);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        recyclerViewProductList = findViewById(R.id.product_rec);
-        productAdapter = new ProductAdapter(this);
-        LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(this, RecyclerView.VERTICAL , false);
-        recyclerViewProductList.setLayoutManager(linearLayoutManager1);
-        productAdapter.setData(getProduct());
-        recyclerViewProductList.setAdapter(productAdapter);
+        getSupportFragmentManager().beginTransaction().replace(R.id.body_container, new HomePage()).commit();
+        navigationView.setSelectedItemId(R.id.homepage);
 
-//        navigationView = findViewById(R.id.navigationBottom);
-//        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-//
-//        getSupportFragmentManager().beginTransaction().replace(R.id.body_container, new HomePage()).commit();
-//        navigationView.setSelectedItemId(R.id.homepage);
-//
-//        navigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//                Fragment selectedFragment = null;
-//
-//                switch (item.getItemId()) {
-//                    case R.id.homepage:
-//                        selectedFragment = new HomePage();
-//
-//                        break;
-//                    case R.id.productpage:
-//                        selectedFragment = new ProductPage();
-//                        break;
-//                    case R.id.searchpage:
-//                        selectedFragment = new searchPage();
-//                        break;
-//                    case R.id.customerpage:
-//                        selectedFragment = new CustomerPage();
-//                        break;
-//                }
-//                getSupportFragmentManager().beginTransaction().replace(R.id.body_container,
-//                        selectedFragment).commit();
-//
-//
-//
-//
-//
-//                return true;
-//            }
-//        });
+        navigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment selectedFragment = null;
+
+                switch (item.getItemId()) {
+                    case R.id.homepage:
+                        selectedFragment = new HomePage();
+
+                        break;
+                    case R.id.productpage:
+                        selectedFragment = new ProductPage();
+                        break;
+                    case R.id.searchpage:
+                        selectedFragment = new searchPage();
+                        break;
+                    case R.id.customerpage:
+                        selectedFragment = new CustomerPage();
+                        break;
+                }
+                getSupportFragmentManager().beginTransaction().replace(R.id.body_container,
+                        selectedFragment).commit();
+
+                return true;
+            }
+        });
 
 
 
