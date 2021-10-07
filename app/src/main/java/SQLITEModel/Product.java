@@ -2,13 +2,16 @@ package SQLITEModel;
 
 public class Product {
     private int _id;
-    private String _idCategory;
+    private int _idCategory;
     private String nameProduct;
     private Double price;
     private String descriptions;
     private String location;
 
-    public Product(int _id, String _idCategory, String nameProduct, Double price, String descriptions, String location) {
+    public Product() {
+    }
+
+    public Product(int _id, int _idCategory, String nameProduct, Double price, String descriptions, String location) {
         this._id = _id;
         this._idCategory = _idCategory;
         this.nameProduct = nameProduct;
@@ -17,7 +20,12 @@ public class Product {
         this.location = location;
     }
 
-    public Product() {
+    public Product(int _idCategory, String nameProduct, Double price, String descriptions, String location) {
+        this._idCategory = _idCategory;
+        this.nameProduct = nameProduct;
+        this.price = price;
+        this.descriptions = descriptions;
+        this.location = location;
     }
 
     public int get_id() {
@@ -28,11 +36,11 @@ public class Product {
         this._id = _id;
     }
 
-    public String get_idCategory() {
+    public int get_idCategory() {
         return _idCategory;
     }
 
-    public void set_idCategory(String _idCategory) {
+    public void set_idCategory(int _idCategory) {
         this._idCategory = _idCategory;
     }
 

@@ -6,6 +6,7 @@ public class homestay implements Serializable {
     private String title;
     private int resourceId;
 
+
     public homestay(String title, int resourceId) {
         this.title = title;
         this.resourceId = resourceId;

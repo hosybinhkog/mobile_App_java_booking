@@ -6,11 +6,20 @@ public class Popular implements Serializable {
     private String title;
     private String desc;
     private int ResourceId;
+    private  String location;
+    private int Price;
+    private String categoryName;
 
-    public Popular(String title, String desc, int resourceId) {
+    public Popular() {
+    }
+
+    public Popular(String title, String desc, int resourceId, String location, int price, String categoryName) {
         this.title = title;
         this.desc = desc;
-        this.ResourceId = resourceId;
+        ResourceId = resourceId;
+        this.location = location;
+        Price = price;
+        this.categoryName = categoryName;
     }
 
     public String getTitle() {
@@ -35,5 +44,29 @@ public class Popular implements Serializable {
 
     public void setResourceId(int resourceId) {
         ResourceId = resourceId;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public int getPrice() {
+        return Price;
+    }
+
+    public void setPrice(int price) {
+        Price = price;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 }

@@ -128,13 +128,12 @@ public class HomePage extends Fragment {
         List<Product> list = new ArrayList<>();
         List<Popular> listPopular = new ArrayList<>();
 
-        listPopular.add(new Popular("Popular 1","Hanoi hom nay nho em",R.drawable.category4));
-        listPopular.add(new Popular("Popular 1","Hanoi hom nay nho em",R.drawable.category4));
-        listPopular.add(new Popular("Popular 1","Hanoi hom nay nho em",R.drawable.category4));
-        listPopular.add(new Popular("Popular 1","Hanoi hom nay nho em",R.drawable.category4));
-        listPopular.add(new Popular("Popular 1","Hanoi hom nay nho em",R.drawable.category4));
-        listPopular.add(new Popular("Popular 1","Hanoi hom nay nho em",R.drawable.category4));
-        listPopular.add(new Popular("Popular 1","Hanoi hom nay nho em",R.drawable.category4));
+        listPopular.add(new Popular("Dalat 1","Dalat lanh lam em oi a nho em nhieu lam hehe",R.drawable.category4,"Nghệ An ấm áp",760,"loại 1"));
+        listPopular.add(new Popular("Popular 3","Hanoi hom nay nho  3em",R.drawable.popular2,"Nghệ An ấm áp",760,"loại 1"));
+        listPopular.add(new Popular("Popular 4","Hanoi hom nay nho 2 em",R.drawable.category4,"Nghệ An ấm áp",760,"loại 1"));
+        listPopular.add(new Popular("Popular 5","Hanoi hom nay nho 3 em",R.drawable.category4,"Nghệ An ấm áp",760,"loại 1"));
+        listPopular.add(new Popular("Popular 1","Hanoi hom nay nho em",R.drawable.category4,"Nghệ An ấm áp",760,"loại 1"));
+
 
         list.add(new Product(listPopular,"Popular"));
 

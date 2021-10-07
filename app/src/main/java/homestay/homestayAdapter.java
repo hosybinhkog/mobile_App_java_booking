@@ -43,9 +43,7 @@ public class homestayAdapter extends RecyclerView.Adapter<homestayAdapter.Homest
         holder.addProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(holder.itemView.getContext(), ShowDetailHomeStay.class);
-                intent.putExtra("object",homestays.get(position));
-                holder.itemView.getContext().startActivity(intent);
+                
             }
         });
 

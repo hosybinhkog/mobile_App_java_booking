@@ -91,25 +91,6 @@ public class AppActivity extends AppCompatActivity  {
 
     }
 
-    private List<Product> getProduct() {
-        List<Product> list = new ArrayList<>();
-        List<Popular> listPopular = new ArrayList<>();
-
-        listPopular.add(new Popular("Popular 1","Hanoi hom nay nho em",R.drawable.category4));
-        listPopular.add(new Popular("Popular 1","Hanoi hom nay nho em",R.drawable.category4));
-        listPopular.add(new Popular("Popular 1","Hanoi hom nay nho em",R.drawable.category4));
-        listPopular.add(new Popular("Popular 1","Hanoi hom nay nho em",R.drawable.category4));
-        listPopular.add(new Popular("Popular 1","Hanoi hom nay nho em",R.drawable.category4));
-        listPopular.add(new Popular("Popular 1","Hanoi hom nay nho em",R.drawable.category4));
-        listPopular.add(new Popular("Popular 1","Hanoi hom nay nho em",R.drawable.category4));
-
-        list.add(new Product(listPopular,"Popular"));
-        list.add(new Product(listPopular,"Popular"));
-        list.add(new Product(listPopular,"Popular"));
-        list.add(new Product(listPopular,"Popular"));
-
-        return list;
-    }
 
     private List<categoryA> GetCategory() {
         List<categoryA> list = new ArrayList<>();

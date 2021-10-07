@@ -2,7 +2,9 @@ package com.example.projecthomestay.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,6 +29,9 @@ public class ShowDetailHomeStay extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_detail_home_stay);
+        mappingView();
+        bandle();
+
     }
 
     public void mappingView(){
@@ -38,10 +43,35 @@ public class ShowDetailHomeStay extends AppCompatActivity {
         price = findViewById(R.id.price_detail);
         backHome = findViewById(R.id.ButtonBackHome);
         addToCart = findViewById(R.id.addCartDetail);
+
+        backHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                open();
+
+            }
+        });
+
+        addToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 
     public void bandle(){
         object = (Popular)getIntent().getSerializableExtra("object");
+        imgView.setImageResource(object.getResourceId());
+        desc.setText(object.getDesc());
+        txtName.setText(object.getTitle());
+        location.setText(object.getLocation());
+        price.setText("$"+ object.getPrice());
+        categoryName.setText(object.getCategoryName());
+    }
 
+    public void open(){
+        Intent intent = new Intent(this,AppActivity.class);
+        startActivity(intent);
     }
 }
